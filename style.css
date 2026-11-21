@@ -48,3 +48,102 @@
 @media(min-width:701px) and (max-width:1180px){nav{gap:16px;font-size:12px}}
 @media(max-width:1050px){.assessment-grid{grid-template-columns:1fr;gap:25px}.assessment-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.assessment-form{max-width:780px;width:100%}}
 @media(max-width:700px){.migration-head .migration-disclaimer{font-size:12px}.migration-action{margin-top:14px}.assessment-cards{grid-template-columns:1fr}.assessment-cards article{padding:19px}.assessment-form{padding:24px 18px}.assessment-fields{grid-template-columns:1fr;gap:15px}.assessment-fields label{min-height:0}.assessment-form h3{font-size:22px}.delivery-panel{padding:24px}.assessment-form>.button{gap:8px;line-height:1.5;font-size:12px}}
+
+/* NUVEX VISUAL SYSTEM V2 — brochure-consistent depth, fine grid and resource tiles */
+:root{--nuvex-navy:#070e21;--nuvex-deep:#091329;--nuvex-blue:#1676f5;--nuvex-ice:#f5f8fc;--nuvex-grid:rgba(28,91,173,.065);--nuvex-border:#d9e5f3}
+body{background:#fff}
+header{box-shadow:0 8px 26px rgba(11,35,77,.045)}
+.section{position:relative}
+.systems{background:radial-gradient(ellipse 55% 70% at 100% 2%,rgba(40,118,235,.065),transparent 80%),#fff}
+.system-panel{border:1px solid #d7e2f3;box-shadow:0 22px 52px rgba(13,42,88,.065);border-radius:17px;overflow:hidden}
+.system-tabs button[aria-selected=true]{background:linear-gradient(125deg,#1676f5,#105cca)}
+.system-detail{background:linear-gradient(145deg,#f8fbff,#eaf2fd)}
+.plans{
+ background-color:#f5f8fd;
+ background-image:
+ radial-gradient(ellipse 52% 52% at 82% 20%,rgba(32,120,255,.11),transparent 82%),
+ linear-gradient(to right,var(--nuvex-grid) 1px,transparent 1px),
+ linear-gradient(to bottom,var(--nuvex-grid) 1px,transparent 1px),
+ linear-gradient(180deg,#f9fbff 0%,#eef4fd 100%);
+ background-size:auto,40px 40px,40px 40px,auto;
+ border-top:1px solid #ecf2fc;
+ border-bottom:1px solid #e8eef8;
+}
+.plan-grid{gap:22px;align-items:stretch}
+.plan-card{position:relative;isolation:isolate;overflow:hidden;border:1px solid var(--nuvex-border);border-radius:21px;background:rgba(255,255,255,.97);box-shadow:0 14px 34px rgba(13,41,91,.09),0 2px 8px rgba(9,30,71,.025);transition:box-shadow .22s ease,transform .22s ease,border-color .22s ease}
+.plan-card:before{content:"";height:3px;background:linear-gradient(90deg,transparent,#1676f5,transparent);position:absolute;left:22px;right:22px;top:0;opacity:.5}
+.plan-card.featured{border:1.5px solid #3189ff;background:radial-gradient(circle at 85% -5%,#1d3d78 0%,#0b1d42 38%,#08142d 85%);box-shadow:0 22px 50px rgba(12,43,93,.22),0 0 0 3px rgba(22,118,245,.045)}
+.plan-card.featured:before{opacity:1;background:linear-gradient(90deg,#247fff,#78b8ff,#247fff)}
+.plan-label{font-size:11px;letter-spacing:1.65px}
+.plan-card h3{letter-spacing:-1.15px}
+.plan-price{margin:25px 0 26px;font-size:clamp(36px,3.6vw,54px);line-height:1.13}
+.plan-price span{letter-spacing:.25px;font-size:12px}
+.plan-specs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:0 0 27px}
+.plan-spec{min-width:0;border:1px solid #e0e8f4;background:linear-gradient(145deg,#fff,#f5f8fe);border-radius:12px;padding:16px 10px 14px;box-shadow:0 6px 14px rgba(18,47,91,.055);display:flex;flex-direction:column;gap:8px;align-items:flex-start;justify-content:center}
+.plan-spec strong{display:block;color:#0d1936;font-size:clamp(16px,1.6vw,23px);font-weight:800;letter-spacing:-.8px;line-height:1.15;white-space:nowrap}
+.plan-spec span{display:block;color:#728097;font-size:9px;font-weight:800;letter-spacing:.7px;line-height:1.35;overflow-wrap:anywhere}
+.featured .plan-spec{border-color:#3a5276;background:linear-gradient(145deg,rgba(69,112,178,.24),rgba(21,45,88,.64));box-shadow:0 6px 18px rgba(0,0,0,.08)}
+.featured .plan-spec strong{color:#fff}
+.featured .plan-spec span{color:#c4d4ec}
+.plan-card .button{min-height:51px;border-radius:8px;box-shadow:0 7px 18px rgba(13,61,134,.08);display:flex;justify-content:center;gap:11px}
+.plan-card .button span{font-size:17px;line-height:1}
+.plan-card.featured .button.primary{background:#237dfa}
+.plan-card.featured .button.primary:hover{background:#398eff}
+.plan-sheet{margin-top:18px}
+.plan-inclusions{border-radius:17px;box-shadow:0 11px 27px rgba(13,49,99,.065);border-color:#dde7f5}
+.advantages{background:linear-gradient(180deg,#f7faff,#fff 86%)}
+.benefits article{border-left-color:#d9e4f2}
+.migration{
+ background-color:#091329;
+ background-image:
+ radial-gradient(ellipse 55% 75% at 95% 35%,rgba(34,93,170,.18),transparent 78%),
+ linear-gradient(to right,rgba(122,164,229,.035) 1px,transparent 1px),
+ linear-gradient(to bottom,rgba(122,164,229,.035) 1px,transparent 1px),
+ linear-gradient(130deg,#091329,#0b1e3a);
+ background-size:auto,44px 44px,44px 44px,auto;
+}
+.steps article{border-bottom-color:rgba(145,177,222,.16)}
+.steps article>span{display:grid;place-items:center;align-self:start;min-width:40px;min-height:40px;padding:6px;border:1px solid rgba(118,178,255,.35);border-radius:9px;background:rgba(33,101,196,.1);font-weight:800}
+.diagnostic{
+ background-image:
+ radial-gradient(ellipse 65% 62% at 96% 4%,rgba(37,116,232,.08),transparent 80%),
+ linear-gradient(to right,rgba(30,98,183,.045) 1px,transparent 1px),
+ linear-gradient(to bottom,rgba(30,98,183,.045) 1px,transparent 1px),
+ linear-gradient(180deg,#f6f9fe,#fff 92%);
+ background-size:auto,40px 40px,40px 40px,auto;
+}
+.assessment-cards article{box-shadow:0 10px 25px rgba(11,41,90,.04);border-color:#dbe6f4}
+.assessment-form{background:rgba(255,255,255,.98);box-shadow:0 20px 53px rgba(10,41,100,.095);border-color:#d6e3f3}
+.delivery-panel{box-shadow:0 15px 36px rgba(8,29,66,.16)}
+.contact{background:linear-gradient(180deg,#eaf3ff,#f2f7fd);border-top:1px solid #e1eaf8}
+.contact form{border-radius:15px;box-shadow:0 14px 35px rgba(11,44,95,.065)}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+ .plan-card:hover{transform:translateY(-4px);border-color:#94bff5;box-shadow:0 20px 44px rgba(15,50,105,.13)}
+ .plan-card.featured:hover{box-shadow:0 27px 55px rgba(12,43,93,.27)}
+}
+@media(max-width:1200px) and (min-width:701px){
+ .plan-card{padding:24px 17px}
+ .plan-specs{gap:6px}
+ .plan-spec{padding:12px 6px}
+ .plan-spec strong{font-size:16px}
+ .plan-spec span{font-size:8px;letter-spacing:.25px}
+}
+@media(max-width:700px){
+ .plans,.diagnostic{background-size:auto,34px 34px,34px 34px,auto}
+ .plan-grid{gap:20px}
+ .plan-card{padding:26px 22px}
+ .plan-price{font-size:43px;margin:24px 0}
+ .plan-specs{gap:8px;margin-bottom:24px}
+ .plan-spec{min-width:0;min-height:83px;padding:12px 8px}
+ .plan-spec strong{font-size:clamp(16px,5vw,23px)}
+ .plan-spec span{font-size:8px;letter-spacing:.35px}
+ .plan-inclusions{padding:22px}
+ .system-panel{border-radius:13px}
+ .migration{background-size:auto,34px 34px,34px 34px,auto}
+}
+@media(max-width:360px){
+ .plan-card{padding:22px 16px}
+ .plan-spec{padding:10px 5px}
+ .plan-spec strong{font-size:16px}
+ .plan-spec span{font-size:7.5px}
+}
