@@ -62,7 +62,7 @@
         <div>
           <label for="diag-product">¿Qué sistema utilizas?</label>
           <select id="diag-product" name="product">
-            <option>CONTPAQi Contabilidad</option>
+            <option>Por definir</option><option>CONTPAQi Contabilidad</option>
             <option>CONTPAQi Comercial</option>
             <option>CONTPAQi Nóminas</option>
             <option>CONTPAQi Bancos</option>
@@ -80,7 +80,7 @@
         <div>
           <label for="diag-origin">¿Dónde trabajas actualmente?</label>
           <select id="diag-origin" name="origin">
-            <option>Servidor en mi oficina</option><option>Otra nube o proveedor</option><option>Computadora local</option><option>Aún no tengo servidor</option><option>No lo sé</option>
+            <option>Por definir</option><option>Servidor en mi oficina</option><option>Otra nube o proveedor</option><option>Computadora local</option><option>Aún no tengo servidor</option><option>No lo sé</option>
           </select>
         </div>
         <div>
@@ -94,6 +94,16 @@
           <select id="diag-companies" name="companies">
             <option>Por definir</option><option>1</option><option>2 a 5</option><option>Más de 5</option>
           </select>
+        </div>
+        <div>
+          <label for="diag-volume">Volumen aproximado de información</label>
+          <select id="diag-volume" name="volume">
+            <option>Por definir</option><option>Hasta 100 GB</option><option>101 a 500 GB</option><option>501 GB a 1 TB</option><option>Más de 1 TB</option>
+          </select>
+        </div>
+        <div>
+          <label for="diag-version">Versión del sistema (opcional)</label>
+          <input id="diag-version" name="version" maxlength="40" placeholder="Ej. versión y año">
         </div>
         <div>
           <label for="diag-name">Nombre o empresa (opcional)</label>
