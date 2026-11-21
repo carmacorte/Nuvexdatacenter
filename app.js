@@ -13,6 +13,8 @@ if(diagnosticForm){
     origin:document.querySelector('#diag-origin'),
     backup:document.querySelector('#diag-backup'),
     companies:document.querySelector('#diag-companies'),
+    volume:document.querySelector('#diag-volume'),
+    version:document.querySelector('#diag-version'),
     name:document.querySelector('#diag-name')
   };
   const diagResult=document.querySelector('#diagnostic-result');
@@ -47,6 +49,9 @@ if(diagnosticForm){
     if(diagFields.companies.value==='Más de 5'){
       notices.push('Revisaremos tamaño y cantidad de bases de datos por empresa.');
     }
+    if(diagFields.volume.value==='Más de 1 TB'){
+      notices.push('El volumen requiere evaluar capacidad, tiempo de transferencia y política de respaldos.');
+    }
     diagResult.dataset.level=attention?'attention':'review';
     diagTitle.textContent=attention?'Punto por resolver antes de migrar':'Evaluación técnica requerida';
     diagText.textContent=notices.join(' ');
@@ -64,6 +69,8 @@ if(diagnosticForm){
       'Entorno actual: '+diagFields.origin.value,
       'Respaldos: '+diagFields.backup.value,
       'Empresas: '+diagFields.companies.value,
+      'Volumen de datos: '+diagFields.volume.value,
+      diagFields.version.value.trim()?'Versión de sistema: '+diagFields.version.value.replace(/[\r\n\t]+/g,' ').trim():null,
       'Quiero revisar compatibilidad, respaldos, alcance y plan de migración. No envío contraseñas ni datos contables por este formulario.'
     ].filter(Boolean).join('\n');
     const url='https://wa.me/526145153676?text='+encodeURIComponent(message);
