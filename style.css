@@ -147,3 +147,62 @@ header{box-shadow:0 8px 26px rgba(11,35,77,.045)}
  .plan-spec strong{font-size:16px}
  .plan-spec span{font-size:7.5px}
 }
+
+
+/* NUVEX ICON SYSTEM V1 — light, local, accessible outline vectors */
+.nu-svg-sprite{position:absolute;width:0;height:0;overflow:hidden;pointer-events:none}
+.nu-icon{display:block;width:19px;height:19px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.spec-head{display:flex;align-items:center;gap:8px;width:100%;min-width:0}
+.plan-spec .spec-head strong{min-width:0}
+.plan-spec .spec-icon{width:18px;height:18px;color:#1676f5;flex:0 0 18px}
+.featured .plan-spec .spec-icon{color:#79b6ff}
+.plan-inclusions ul{gap:15px}
+.plan-inclusions li{display:flex;align-items:center;gap:11px;line-height:1.45}
+.plan-inclusions li:before{content:none;display:none}
+.benefit-icon{display:flex;align-items:center;justify-content:center;flex:0 0 34px;width:34px;height:34px;border-radius:10px;background:#eaf3ff;box-shadow:inset 0 0 0 1px rgba(22,118,245,.12);color:#1676f5}
+.benefit-icon .nu-icon{width:18px;height:18px}
+.benefits .feature-icon{display:flex;align-items:center;justify-content:center;width:52px;height:52px;margin:0 0 23px;background:linear-gradient(145deg,#e9f3ff,#f5f9ff);border:1px solid #d8e9ff;border-radius:15px;box-shadow:0 8px 20px rgba(15,74,155,.065);color:#1676f5}
+.benefits .feature-icon .nu-icon{width:27px;height:27px;stroke-width:1.65}
+label.icon-label{display:flex;align-items:center;gap:9px;line-height:1.35}
+.field-icon{display:flex;align-items:center;justify-content:center;flex:0 0 27px;width:27px;height:27px;background:#edf4ff;color:#1676f5;border:1px solid #dfebff;border-radius:8px}
+.field-icon .nu-icon{width:16px;height:16px;stroke-width:1.7}
+.assessment-fields label.icon-label{min-height:35px}
+.button.icon-submit{display:inline-flex;align-items:center;justify-content:center;gap:11px;line-height:1.35}
+.button.icon-submit .nu-icon{width:19px;height:19px;flex:0 0 19px}
+.button.icon-submit span{min-width:0}
+.plan-note{display:flex;align-items:flex-start;gap:8px;max-width:950px}
+.plan-note .nu-icon{width:15px;height:15px;color:#1676f5;flex:0 0 15px;margin-top:2px}
+.phone{display:flex;align-items:center;gap:13px;width:fit-content}
+.phone .nu-icon{width:27px;height:27px;color:#1676f5}
+.phone span{color:inherit;margin:0}
+footer .footer-legal{max-width:490px;display:flex;flex-direction:column;gap:11px;line-height:1.65;margin:0}
+footer .legal-line{display:flex;align-items:flex-start;gap:10px}
+footer .legal-line .nu-icon{width:16px;height:16px;margin-top:1px;color:#90baff}
+footer .footer-action{display:flex;align-items:center;gap:9px;white-space:nowrap;line-height:1.35}
+footer .footer-action .nu-icon{width:16px;height:16px;color:#8db9ff}
+footer .footer-action:hover{color:#fff}
+@media(max-width:1100px){
+ .plan-inclusions ul{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .plan-spec .spec-head{flex-direction:column;align-items:flex-start;gap:5px}
+ .plan-spec .spec-icon{width:17px;height:17px}
+}
+@media(max-width:700px){
+ .plan-inclusions ul{grid-template-columns:1fr;gap:14px}
+ .plan-inclusions li{gap:12px}
+ .plan-spec .spec-head{flex-direction:row;gap:7px;align-items:center}
+ .plan-spec .spec-icon{width:16px;height:16px;flex-basis:16px}
+ .plan-spec strong{font-size:clamp(15px,4.2vw,22px)}
+ .benefits .feature-icon{width:45px;height:45px;border-radius:13px;margin-bottom:16px}
+ .benefits .feature-icon .nu-icon{width:23px;height:23px}
+ .assessment-fields label.icon-label{min-height:0}
+ .button.icon-submit{gap:9px}
+ .phone{gap:10px}
+ footer .footer-legal{width:100%}
+ footer .footer-action{margin-right:5px}
+}
+@media(max-width:360px){
+ .plan-spec .spec-head{flex-direction:column;align-items:flex-start;gap:5px}
+ .plan-spec .spec-icon{width:16px;height:16px}
+ .plan-spec strong{font-size:15px}
+ .button.icon-submit{font-size:11px}
+}
