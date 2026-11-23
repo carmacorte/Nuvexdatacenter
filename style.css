@@ -206,3 +206,43 @@ footer .footer-action:hover{color:#fff}
  .plan-spec strong{font-size:15px}
  .button.icon-submit{font-size:11px}
 }
+
+
+/* NUVEX CONTPAQI PRODUCT TABS — proprietary-neutral product category marks */
+.system-tabs button{align-items:center;gap:13px;min-width:0;transition:background .18s,color .18s}
+.system-icon{display:flex;align-items:center;justify-content:center;flex:0 0 45px;width:45px;height:45px;color:#126ac7;background:#e9f3ff;border-radius:13px;border:1px solid #d6e7fa}
+.system-icon .nu-icon{width:24px;height:24px;stroke-width:1.6}
+.system-tab-label{display:flex;flex:1;min-width:0;flex-direction:column;align-items:flex-start;gap:4px}
+.system-tab-label small{font-size:9px;letter-spacing:1.4px;color:#67809f;font-weight:700}
+.system-tab-label strong{font-size:15px;font-weight:800;line-height:1.25}
+.system-tab-arrow{margin-left:auto;font-size:16px;line-height:1;color:#5798db;opacity:.8}
+.system-tabs button[aria-selected=true] .system-icon{background:#ffffff22;border-color:#ffffff4b;color:#fff}
+.system-tabs button[aria-selected=true] .system-tab-label small{color:#d4e8ff}
+.system-tabs button[aria-selected=true] .system-tab-arrow{color:#fff;opacity:1}
+.system-identity{display:flex;align-items:center;gap:13px;position:relative;z-index:1;margin-bottom:22px}
+.system-active-icon{display:grid;place-items:center;flex:0 0 57px;height:57px;width:57px;border:1px solid #cfe4fc;background:#e6f2ff;border-radius:15px;color:#1676f5;box-shadow:0 8px 21px #194b830d}
+.system-active-icon .nu-icon{width:29px;height:29px;stroke-width:1.6}
+.system-identity p{font-size:9px;font-weight:800;color:#6180a7;letter-spacing:1.25px;margin:0 0 7px}
+.system-identity strong{font-size:15px;line-height:1.25;color:#11294a}
+.system-disclaimer{font-size:11px;line-height:1.75;max-width:900px}
+@media(max-width:1000px) and (min-width:701px){
+ .system-tabs button{gap:9px;padding:19px 12px}
+ .system-icon{width:38px;height:38px;flex-basis:38px;border-radius:10px}
+ .system-icon .nu-icon{width:21px;height:21px}
+ .system-tab-label strong{font-size:13px}
+ .system-tab-label small{font-size:8px}
+ .system-tab-arrow{display:none}
+}
+@media(max-width:700px){
+ .system-tabs{scroll-snap-type:x proximity;overscroll-behavior-x:contain;scrollbar-width:thin}
+ .system-tabs button{flex:0 0 auto;min-width:145px;min-height:75px;gap:8px;padding:12px 13px;scroll-snap-align:start}
+ .system-icon{flex-basis:35px;width:35px;height:35px;border-radius:10px}
+ .system-icon .nu-icon{width:20px;height:20px}
+ .system-tab-label strong{font-size:12px}
+ .system-tab-label small{font-size:7px;letter-spacing:.65px}
+ .system-tab-arrow{display:none}
+ .system-identity{gap:11px;margin-bottom:20px}
+ .system-active-icon{width:49px;height:49px;flex-basis:49px;border-radius:13px}
+ .system-active-icon .nu-icon{width:26px;height:26px}
+ .system-identity strong{font-size:13px}
+}
