@@ -374,3 +374,148 @@ footer .footer-action:hover{color:#fff}
  .premium-module-grid .module-description{font-size:9.5px}
 }
 @media(prefers-reduced-motion:reduce){.premium-module-grid .module-card{transition:none}}
+
+
+/* OFFICIAL CONTPAQI PLATFORM SHOWCASE V1 */
+.official-app-panel{
+  display:grid;grid-template-columns:minmax(270px,0.95fr) minmax(0,1.9fr);
+  overflow:hidden;border:1px solid #d8e5f7;border-radius:20px;
+  background:#f6f9ff;box-shadow:0 18px 46px rgba(12,46,107,.085);
+}
+.official-app-tabs{display:flex;flex-direction:column;border-right:1px solid #dfe8f3;background:#fff;min-width:0}
+.official-app-tabs .official-app-tab{
+  min-width:0;min-height:88px;display:flex;align-items:center;justify-content:flex-start;
+  gap:12px;padding:15px 16px 15px 20px;
+  border:0;border-bottom:1px solid #e3eaf5;background:#fff;
+  text-align:left;color:#0c1d3b;cursor:pointer;transition:background .18s,border-color .18s,color .18s;
+}
+.official-app-tabs .official-app-tab:last-child{border-bottom:none}
+.official-app-tabs .official-app-tab[aria-selected=true]{
+  background:linear-gradient(112deg,#0e64d0,#1676f5);
+  color:#fff;border-color:rgba(255,255,255,.18);
+}
+.official-app-tabs .official-app-tab:hover:not([aria-selected=true]){
+  background:#f3f8ff
+}
+.official-app-tabs .app-line-icon{
+  display:grid;place-items:center;width:38px;height:38px;flex:0 0 38px;
+  border-radius:11px;border:1px solid #dceafd;
+  background:#edf5ff;color:#1676f5
+}
+.official-app-tabs .app-line-icon .nu-icon{width:20px;height:20px;stroke-width:1.75}
+.official-app-tabs .app-tab-copy{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:5px}
+.official-app-tabs .app-tab-copy small{
+  font-size:9px;line-height:1.1;letter-spacing:1px;color:#7185a5;font-weight:700
+}
+.official-app-tabs .app-tab-copy strong{
+  font-size:13px;line-height:1.28;letter-spacing:-.2px;font-weight:800;overflow-wrap:break-word
+}
+.official-app-tabs .app-brand-mark{
+  display:block;position:relative;overflow:hidden;flex:0 0 58px;width:58px;height:48px;
+  border:1px solid #e0e9f6;border-radius:10px;background:#fff;
+  box-shadow:0 3px 9px rgba(7,28,64,.045)
+}
+.official-app-tabs .app-brand-mark img{
+  position:absolute;top:50%;left:5px;height:38px;width:auto;max-width:none;
+  transform:translateY(-50%);
+}
+.official-app-tabs .official-app-tab[data-system=xml] .app-brand-mark img{
+  height:54px;left:-24px;top:15%;
+}
+.official-app-tabs .app-tab-arrow{margin-left:0;font-size:14px;color:#7ca8e6;opacity:.8;line-height:1}
+.official-app-tabs .official-app-tab[aria-selected=true] .app-line-icon{
+  background:rgba(255,255,255,.11);border-color:rgba(255,255,255,.25);color:#fff
+}
+.official-app-tabs .official-app-tab[aria-selected=true] .app-tab-copy small{
+  color:#d8e9ff
+}
+.official-app-tabs .official-app-tab[aria-selected=true] .app-tab-arrow{color:#fff;opacity:1}
+.official-app-detail{
+  display:grid;grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr);
+  align-items:center;gap:18px;min-width:0;padding:45px 30px 43px 38px;
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(ellipse 60% 65% at 90% 30%,rgba(26,112,244,.11),transparent 76%),
+    linear-gradient(to right,rgba(38,115,221,.028) 1px,transparent 1px),
+    linear-gradient(to bottom,rgba(38,115,221,.028) 1px,transparent 1px),
+    linear-gradient(130deg,#f8fbff,#eaf2ff);
+  background-size:auto,44px 44px,44px 44px,auto;
+}
+.official-app-copy{min-width:0;position:relative;z-index:2}
+.official-app-copy .system-identity{gap:10px;margin:0 0 21px}
+.official-app-copy .system-active-icon{
+  flex:0 0 43px;width:43px;height:43px;border-radius:12px;background:#ecf5ff;border-color:#dbeaff
+}
+.official-app-copy .system-active-icon .nu-icon{width:22px;height:22px}
+.official-app-copy .system-identity p{font-size:8px;letter-spacing:1.15px}
+.official-app-copy .system-identity strong{font-size:12px}
+.official-app-copy h3{margin:0 0 18px;font-size:clamp(23px,2.55vw,34px);line-height:1.15;letter-spacing:-1.2px}
+.official-app-copy #system-description{font-size:12px;line-height:1.85;color:#65748a;margin:0 0 21px;max-width:370px}
+.official-app-copy .detail-lines{display:flex;gap:12px;margin:21px 0;flex-wrap:wrap}
+.official-app-copy .detail-lines span{font-size:9px;line-height:1.4}
+.official-app-copy .detail-lines b{margin-top:5px}
+.official-app-copy .text-link{display:inline-block;font-size:12px;font-weight:700}
+.official-app-visual{min-width:0;margin:0;position:relative;z-index:1;align-self:stretch;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:13px}
+.official-logo-surface{
+  display:flex;align-items:center;justify-content:center;position:relative;
+  width:100%;min-height:210px;max-width:420px;aspect-ratio:1.18;
+  border:1px solid rgba(167,197,237,.55);border-radius:24px;
+  background:
+    radial-gradient(circle at 35% 18%,rgba(42,128,255,.105),transparent 53%),
+    linear-gradient(145deg,#fff 25%,#f5f9ff 100%);
+  box-shadow:0 20px 44px rgba(19,59,114,.11),0 3px 8px rgba(18,58,109,.035);
+  overflow:hidden;padding:52px 18px 23px
+}
+.official-visual-eyebrow{
+  position:absolute;top:24px;left:22px;font-size:8px;letter-spacing:1.35px;
+  color:#7f93b0;font-weight:800
+}
+#system-active-logo{
+  display:block;object-fit:contain;object-position:center;
+  width:100%;height:auto;max-height:200px;filter:drop-shadow(0 10px 15px rgba(30,60,105,.055));
+  animation:official-logo-in .3s ease both
+}
+.official-app-visual figcaption{
+  text-align:center;color:#6e809b;font-size:9px;line-height:1.5;max-width:280px
+}
+.system-disclaimer{max-width:100%;font-size:10px;line-height:1.8;color:#78879e}
+@keyframes official-logo-in{from{opacity:.25;transform:translateY(6px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(max-width:1120px) and (min-width:701px){
+  .official-app-panel{grid-template-columns:minmax(245px,.9fr) minmax(0,1.75fr)}
+  .official-app-tabs .official-app-tab{padding:13px 12px;gap:9px}
+  .official-app-tabs .app-line-icon{width:33px;flex-basis:33px;height:33px}
+  .official-app-tabs .app-brand-mark{flex-basis:47px;width:47px;height:42px}
+  .official-app-tabs .app-brand-mark img{height:34px}
+  .official-app-detail{padding:25px 22px;gap:14px;grid-template-columns:minmax(0,1fr) minmax(0,.85fr)}
+  .official-logo-surface{padding:40px 12px 20px;min-height:175px}
+  .official-app-copy .detail-lines{gap:9px}
+}
+@media(max-width:850px){
+  .official-app-panel{grid-template-columns:1fr}
+  .official-app-tabs{border-right:0;border-bottom:1px solid #dfe8f4}
+  .official-app-tabs .official-app-tab{min-height:70px;padding:11px 17px}
+  .official-app-tabs .app-brand-mark{flex-basis:64px;width:64px}
+  .official-app-detail{padding:32px 26px;min-height:355px;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
+  .official-logo-surface{min-height:170px}
+}
+@media(max-width:600px){
+  .official-app-panel{border-radius:14px}
+  .official-app-tabs .official-app-tab{min-height:65px;gap:9px;padding:10px 11px}
+  .official-app-tabs .app-line-icon{width:34px;height:34px;flex-basis:34px;border-radius:10px}
+  .official-app-tabs .app-line-icon .nu-icon{width:19px;height:19px}
+  .official-app-tabs .app-tab-copy small{font-size:8px}
+  .official-app-tabs .app-tab-copy strong{font-size:12px}
+  .official-app-tabs .app-brand-mark{width:59px;height:43px;flex-basis:59px;border-radius:9px}
+  .official-app-tabs .app-brand-mark img{height:34px}
+  .official-app-tabs .official-app-tab[data-system=xml] .app-brand-mark img{height:48px;left:-18px}
+  .official-app-tabs .app-tab-arrow{font-size:13px}
+  .official-app-detail{display:flex;flex-direction:column;align-items:stretch;gap:24px;padding:27px 19px;background-size:auto,35px 35px,35px 35px,auto}
+  .official-app-copy h3{font-size:28px}
+  .official-app-copy #system-description{font-size:12px;max-width:100%}
+  .official-app-visual{gap:9px}
+  .official-logo-surface{width:100%;max-width:420px;aspect-ratio:1.7;min-height:160px;padding:35px 20px 13px;border-radius:16px}
+  #system-active-logo{max-height:125px}
+  .official-visual-eyebrow{top:13px;left:15px;font-size:7px}
+  .official-app-visual figcaption{font-size:9px}
+}
+@media(prefers-reduced-motion:reduce){#system-active-logo{animation:none}}
