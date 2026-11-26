@@ -519,3 +519,92 @@ footer .footer-action:hover{color:#fff}
   .official-app-visual figcaption{font-size:9px}
 }
 @media(prefers-reduced-motion:reduce){#system-active-logo{animation:none}}
+
+
+/* NUVEX OFFICIAL LOGO REFINEMENT V2 — full logos, no clipped text or duplicate outline marks */
+.official-app-tabs .official-app-tab{
+  display:grid;grid-template-columns:minmax(0,1fr) 116px;
+  align-items:center;column-gap:14px;padding:14px 20px;
+  min-height:88px;white-space:normal;
+}
+.official-app-tabs .app-tab-copy{min-width:0;display:flex;flex-direction:column;gap:6px}
+.official-app-tabs .app-tab-copy small{font-size:10px;letter-spacing:.8px}
+.official-app-tabs .app-tab-copy strong{font-size:15px;line-height:1.32}
+.official-app-tabs .app-brand-mark,
+.official-app-tabs .official-app-tab[data-system=xml] .app-brand-mark{
+  width:116px;height:62px;min-width:0;flex:none;
+  display:flex;align-items:center;justify-content:center;
+  position:static;padding:7px;border-radius:12px;overflow:hidden;
+  background:#fff;border:1px solid #e0e9f5;
+  box-shadow:0 5px 15px rgba(13,40,78,.065);
+}
+.official-app-tabs .app-brand-mark img,
+.official-app-tabs .official-app-tab[data-system=xml] .app-brand-mark img{
+  display:block;position:static;transform:none;left:auto;top:auto;
+  width:100%;height:100%;max-width:100%;max-height:100%;
+  object-fit:contain;object-position:center;
+}
+.official-app-tabs .official-app-tab[aria-selected=true] .app-brand-mark{
+  border-color:rgba(255,255,255,.5);
+  box-shadow:0 6px 14px rgba(0,30,85,.14);
+}
+.official-app-detail{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:30px}
+.official-app-copy .system-identity{align-items:center}
+.official-app-copy .system-active-brand{
+  display:flex;align-items:center;justify-content:center;
+  flex:0 0 73px;width:73px;height:58px;overflow:hidden;
+  border:1px solid #dce8f8;border-radius:12px;background:#fff;
+  box-shadow:0 6px 15px rgba(20,55,100,.045);padding:6px;
+}
+.official-app-copy .system-active-brand img{
+  width:100%;height:100%;max-width:100%;max-height:100%;
+  object-fit:contain;object-position:center;
+}
+.official-app-copy .system-identity strong{font-size:13px}
+.official-logo-surface{
+  aspect-ratio:auto;max-width:none;width:100%;min-width:0;
+  min-height:260px;padding:28px;overflow:visible;
+  border-radius:24px;background:linear-gradient(155deg,#fff,#f7faff);
+  display:flex;align-items:center;justify-content:center;
+}
+.official-logo-frame{
+  display:flex;align-items:center;justify-content:center;
+  width:100%;height:100%;min-height:190px;overflow:visible;
+}
+#system-active-logo{
+  display:block;width:100%;height:auto;max-width:100%;max-height:245px;
+  min-width:0;object-fit:contain;object-position:center;
+  filter:none;animation:official-logo-in .25s ease both;
+}
+.official-app-visual{overflow:visible}
+@media(max-width:1120px) and (min-width:701px){
+ .official-app-tabs .official-app-tab{grid-template-columns:minmax(0,1fr) 90px;gap:8px;padding:11px 12px}
+ .official-app-tabs .app-brand-mark{width:90px;height:58px;padding:5px}
+ .official-app-detail{gap:16px;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+ .official-logo-surface{min-height:200px;padding:16px}
+ .official-logo-frame{min-height:160px}
+}
+@media(max-width:850px){
+ .official-app-tabs{display:flex;flex-direction:column;overflow:visible}
+ .official-app-tabs .official-app-tab{display:grid;grid-template-columns:minmax(0,1fr) 120px;min-height:80px;padding:10px 17px;gap:12px}
+ .official-app-tabs .app-brand-mark{width:120px;height:61px}
+ .official-app-detail{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}
+}
+@media(max-width:600px){
+ .official-app-tabs .official-app-tab{grid-template-columns:minmax(0,1fr) 94px;min-height:73px;padding:10px 13px;gap:8px}
+ .official-app-tabs .app-tab-copy strong{font-size:13px}
+ .official-app-tabs .app-tab-copy small{font-size:8px}
+ .official-app-tabs .app-brand-mark,
+ .official-app-tabs .official-app-tab[data-system=xml] .app-brand-mark{
+   width:94px;height:53px;padding:5px;border-radius:10px;
+ }
+ .official-app-tabs .app-brand-mark img,
+ .official-app-tabs .official-app-tab[data-system=xml] .app-brand-mark img{
+   width:100%;height:100%;object-fit:contain;position:static;transform:none;
+ }
+ .official-app-detail{display:flex;flex-direction:column;gap:21px}
+ .official-app-copy .system-active-brand{width:63px;height:51px;flex-basis:63px}
+ .official-logo-surface{width:100%;min-height:175px;padding:18px;aspect-ratio:auto;overflow:visible}
+ .official-logo-frame{min-height:140px}
+ #system-active-logo{height:auto;max-height:155px;object-fit:contain}
+}
