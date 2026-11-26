@@ -14,10 +14,10 @@ function selectTab(t){
   document.querySelector('#system-title').innerText=title;
   document.querySelector('#system-description').textContent=description;
   document.querySelector('#system-detail').setAttribute('aria-labelledby',t.id);
-  const activeUse=document.querySelector('#system-active-symbol');
+  const activeIcon=document.querySelector('#system-active-icon');
   const activeName=document.querySelector('#system-active-name');
   const officialLogo=document.querySelector('#system-active-logo');
-  if(activeUse)activeUse.setAttribute('href','#nu-product-'+icon);
+  if(activeIcon)activeIcon.src='assets/contpaqi/'+file;
   if(activeName)activeName.textContent=name;
   if(officialLogo){
     officialLogo.src='assets/contpaqi/'+file;
