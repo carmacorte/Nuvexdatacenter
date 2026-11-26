@@ -608,3 +608,130 @@ footer .footer-action:hover{color:#fff}
  .official-logo-frame{min-height:140px}
  #system-active-logo{height:auto;max-height:155px;object-fit:contain}
 }
+
+
+/* NUVEX PLAN FEATURE TYPOGRAPHY V3 — consistent type hierarchy, no clipped values */
+.plan-specs{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px;
+  margin:0 0 28px;
+}
+.plan-spec{
+  min-width:0;
+  min-height:120px;
+  padding:15px 11px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  align-items:stretch;
+  gap:11px;
+}
+.plan-spec .spec-head{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:flex-start;
+  gap:10px;
+  width:100%;
+  min-width:0;
+}
+.plan-spec .spec-icon{
+  width:19px;
+  height:19px;
+  flex:0 0 19px;
+}
+.plan-spec .spec-head strong{
+  display:block;
+  width:100%;
+  min-width:0;
+  font-family:Manrope,Arial,sans-serif;
+  font-size:clamp(18px,1.4vw,21px);
+  font-weight:800;
+  letter-spacing:-.65px;
+  line-height:1.18;
+  font-variant-numeric:tabular-nums;
+  white-space:nowrap;
+}
+.plan-spec > span{
+  font-family:Manrope,Arial,sans-serif;
+  display:block;
+  margin:0;
+  color:#65738b;
+  font-size:10px;
+  font-weight:750;
+  letter-spacing:.45px;
+  line-height:1.45;
+  overflow-wrap:normal;
+  word-break:normal;
+}
+.featured .plan-spec > span{color:#cbdaee}
+.plan-inclusions{
+  padding:27px 30px;
+}
+.plan-inclusions h3{
+  font-size:20px;
+  line-height:1.35;
+  margin:0 0 23px;
+}
+.plan-inclusions ul{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  column-gap:18px;
+  row-gap:19px;
+}
+.plan-inclusions li{
+  display:flex;
+  align-items:center;
+  min-width:0;
+  gap:12px;
+  font-size:15px;
+  line-height:1.48;
+  letter-spacing:0;
+  font-weight:500;
+  text-align:left;
+  white-space:normal;
+}
+.plan-inclusions li > span:last-child{
+  display:block;
+  min-width:0;
+  font-size:15px;
+  line-height:1.48;
+  letter-spacing:0;
+  font-weight:550;
+  overflow-wrap:normal;
+  word-break:normal;
+}
+.plan-inclusions .benefit-icon{
+  flex:0 0 36px;
+  width:36px;
+  height:36px;
+}
+@media (min-width:861px) and (max-width:1180px){
+  .plan-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .plan-spec{padding:15px 11px}
+  .plan-spec .spec-head strong{font-size:20px}
+  .plan-spec > span{font-size:10px}
+  .plan-inclusions ul{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:30px}
+}
+@media (max-width:860px){
+  .plan-grid{grid-template-columns:1fr}
+  .plan-inclusions ul{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:20px}
+  .plan-spec .spec-head strong{font-size:21px}
+}
+@media (max-width:700px){
+  .plan-specs{gap:9px}
+  .plan-spec{min-height:112px;padding:13px 10px;gap:9px}
+  .plan-spec .spec-head{flex-direction:column;align-items:flex-start;gap:8px}
+  .plan-spec .spec-head strong{font-size:clamp(17px,4.5vw,21px)}
+  .plan-spec > span{font-size:9px;letter-spacing:.2px;line-height:1.4}
+  .plan-inclusions{padding:23px}
+  .plan-inclusions h3{font-size:19px}
+  .plan-inclusions ul{grid-template-columns:1fr;gap:15px}
+  .plan-inclusions li > span:last-child{font-size:15px}
+}
+@media (max-width:360px){
+  .plan-spec{padding:12px 7px}
+  .plan-spec .spec-head strong{font-size:16px}
+  .plan-spec > span{font-size:8.5px}
+}
