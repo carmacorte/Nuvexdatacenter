@@ -1,3 +1,57 @@
+/* NUVEX CLEAN URL NAVIGATION V1
+   Inicio: /  |  Secciones: /#soluciones, /#planes, /#diagnostico, etc.
+   Los enlaces directos a secciones siguen funcionando. */
+(() => {
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const sectionIds = ['inicio','soluciones','planes','ventajas','migracion','diagnostico','contacto'];
+  const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+  const header = document.querySelector('header');
+  let manualScrollUntil = 0;
+  let scrollFrame = 0;
+  const rememberManualScroll = () => { manualScrollUntil = Date.now() + 1800; };
+
+  document.querySelectorAll('a[data-home-link]').forEach(link => {
+    link.addEventListener('click', event => {
+      if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || event.button !== 0) return;
+      event.preventDefault();
+      manualScrollUntil = 0;
+      if (window.location.pathname !== '/' || window.location.search || window.location.hash) {
+        window.history.pushState(window.history.state, '', '/');
+      }
+      window.scrollTo({ top: 0, behavior: reducedMotion.matches ? 'auto' : 'smooth' });
+    });
+  });
+
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', () => { manualScrollUntil = 0; });
+  });
+
+  // Update the fragment only for manual scrolling; do not fight smooth anchor navigation.
+  window.addEventListener('wheel', rememberManualScroll, { passive: true });
+  window.addEventListener('touchmove', rememberManualScroll, { passive: true });
+  window.addEventListener('keydown', event => {
+    const tag = event.target && event.target.tagName;
+    if (['INPUT','TEXTAREA','SELECT'].includes(tag) || event.target?.isContentEditable) return;
+    if (['ArrowDown','ArrowUp','PageDown','PageUp','Home','End',' '].includes(event.key)) rememberManualScroll();
+  });
+  window.addEventListener('scroll', () => {
+    if (Date.now() > manualScrollUntil || scrollFrame) return;
+    scrollFrame = window.requestAnimationFrame(() => {
+      scrollFrame = 0;
+      if (Date.now() > manualScrollUntil) return;
+      const cutoff = (header?.getBoundingClientRect().height || 94) + 28;
+      let active = 'inicio';
+      for (const section of sections) {
+        if (section.getBoundingClientRect().top <= cutoff) active = section.id;
+      }
+      const nextHash = active === 'inicio' ? '' : '#' + active;
+      if (window.location.hash !== nextHash) {
+        window.history.replaceState(window.history.state, '', window.location.pathname + window.location.search + nextHash);
+      }
+    });
+  }, { passive: true });
+})();
+
 const menu=document.querySelector('.menu'),nav=document.querySelector('nav');menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú');menu.textContent=open?'×':'☰'});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Abrir menú');menu.textContent='☰'}));
 const systems={
   contabilidad:['Tu contabilidad,\ncontigo.','Accede a tu entorno de Contabilidad desde donde trabajes, con tus sistemas alojados en la infraestructura de Nuvex.','ledger','contabilidad.png','CONTPAQi Contabilidad'],
