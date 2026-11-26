@@ -60,49 +60,34 @@ const systems={
   nominas:['Tu sistema de Nóminas,\nen la nube.','Mantén el entorno de trabajo de tu equipo en un servidor administrado, sujeto a validación de compatibilidad, acceso remoto y política de respaldos.','payroll','nominas.png','CONTPAQi Nóminas'],
   xml:['Tus documentos,\nen el mismo entorno.','Incluye tus necesidades de XML en línea y documentos digitales en la revisión de infraestructura, conectividad y respaldos.','xml','xml-en-linea.png','CONTPAQi XML en línea+']
 };
-/* NUVEX HORIZONTAL BRAND MARKS V1 — build from the licensed assets already hosted locally.
-   Keeps the visual presentation of the user-supplied LOGOS.pptx without image hotlinks. */
-const horizontalLogo = key => {
-  const meta = key === 'nominas'
-    ? {src:'assets/contpaqi/nominas.png',w:1097,h:1074,
-       icon:[5,17,265,246,'230 20 635 590'],
-       text:[285,35,597,210,'2 680 1095 385']}
-    : key === 'xml'
-    ? {src:'assets/contpaqi/xml-en-linea.png',w:1600,h:859,
-       icon:[5,28,265,223,'495 0 605 510'],
-       text:[285,76,600,128,'0 515 1600 340']}
-    : null;
-  if (!meta) return '';
-  const part = ([x,y,w,h,box]) => '<svg x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" viewBox="'+box+'"><image href="'+meta.src+'" width="'+meta.w+'" height="'+meta.h+'"></image></svg>';
-  return '<svg class="official-horizontal-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 280" role="img" aria-label="'+(key==='nominas'?'CONTPAQi Nóminas':'CONTPAQi XML en línea+')+'">'+part(meta.icon)+part(meta.text)+'</svg>';
-};
+/* NUVEX BOUNDED OFFICIAL LOGO SELECTION V3
+   Keep the existing IMG elements for all five apps. No injected SVG or new sizing contexts. */
 const tabs=[...document.querySelectorAll('[role=tab]')];
-function renderSelectedLogo(container,key,file,name){
-  if (!container) return;
-  if (key==='nominas' || key==='xml'){
-    container.innerHTML=horizontalLogo(key);
-    return;
-  }
-  let img=container.querySelector('img');
-  if(!img || container.querySelector('svg')){
-    container.replaceChildren();
-    img=document.createElement('img');
-    img.decoding='async';
-    container.appendChild(img);
-  }
-  img.src='assets/contpaqi/'+file;
-  img.alt='Logotipo de '+name;
-}
+const logoSources={
+ contabilidad:'assets/contpaqi/contabilidad.png',
+ comercial:'assets/contpaqi/comercial-premium.png',
+ bancos:'assets/contpaqi/bancos.png',
+ nominas:'assets/contpaqi/nominas-horizontal.svg',
+ xml:'assets/contpaqi/xml-en-linea-horizontal.svg'
+};
 function selectTab(t){
   if(!t || !systems[t.dataset.system])return;
+  const key=t.dataset.system;
   tabs.forEach(b=>{b.setAttribute('aria-selected',String(b===t));b.tabIndex=b===t?0:-1});
-  const [title,description,icon,file,name]=systems[t.dataset.system];
-  document.querySelector('#system-title').innerText=title;
-  document.querySelector('#system-description').textContent=description;
-  document.querySelector('#system-detail').setAttribute('aria-labelledby',t.id);
-  document.querySelector('#system-active-name').textContent=name;
-  renderSelectedLogo(document.querySelector('.system-active-brand'),t.dataset.system,file,name);
-  renderSelectedLogo(document.querySelector('.official-logo-frame'),t.dataset.system,file,name);
+  const [title,description,icon,file,name]=systems[key];
+  const heading=document.getElementById('system-title');
+  const detail=document.getElementById('system-description');
+  const panel=document.getElementById('system-detail');
+  const brandName=document.getElementById('system-active-name');
+  const smallLogo=document.getElementById('system-active-icon');
+  const largeLogo=document.getElementById('system-active-logo');
+  if(heading) heading.innerText=title;
+  if(detail) detail.textContent=description;
+  if(panel) panel.setAttribute('aria-labelledby',t.id);
+  if(brandName) brandName.textContent=name;
+  const src=logoSources[key];
+  if(smallLogo){smallLogo.src=src;smallLogo.alt='';}
+  if(largeLogo){largeLogo.src=src;largeLogo.alt='Logotipo de '+name;}
 }
 tabs.forEach((t,i)=>{t.addEventListener('click',()=>selectTab(t));t.addEventListener('keydown',e=>{let n;if(e.key==='ArrowRight')n=(i+1)%tabs.length;else if(e.key==='ArrowLeft')n=(i-1+tabs.length)%tabs.length;else if(e.key==='Home')n=0;else if(e.key==='End')n=tabs.length-1;else return;e.preventDefault();selectTab(tabs[n]);tabs[n].focus()})});
 document.querySelector('#quote-form').addEventListener('submit',e=>{e.preventDefault();const name=document.querySelector('#name');if(!name.value.trim()){name.setCustomValidity('Escribe tu nombre o empresa.');name.reportValidity();return}name.setCustomValidity('');const message=`Hola, Nuvex Cloud. Soy ${name.value.trim()}. Me gustaría cotizar un servidor en la nube.\nPlan: ${document.querySelector('#plan').value}.\nSistema: ${document.querySelector('#product').value}.\nUsuarios simultáneos: ${document.querySelector('#users').value}.\n¿Me pueden compartir información?`;const url='https://wa.me/526145153676?text='+encodeURIComponent(message);window.open(url,'_blank','noopener,noreferrer');const status=document.querySelector('#form-status');status.replaceChildren();const link=document.createElement('a');link.href=url;link.target='_blank';link.rel='noopener noreferrer';link.textContent='Solicitud preparada. Si WhatsApp no abrió, toca aquí ↗';status.append(link)});document.querySelector('#name').addEventListener('input',e=>e.target.setCustomValidity(''));
