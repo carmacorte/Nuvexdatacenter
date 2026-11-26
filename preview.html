@@ -519,6 +519,95 @@ footer .footer-action:hover{color:#fff}
   .official-app-visual figcaption{font-size:9px}
 }
 @media(prefers-reduced-motion:reduce){#system-active-logo{animation:none}}
+
+
+/* NUVEX OFFICIAL LOGO REFINEMENT V2 — full logos, no clipped text or duplicate outline marks */
+.official-app-tabs .official-app-tab{
+  display:grid;grid-template-columns:minmax(0,1fr) 116px;
+  align-items:center;column-gap:14px;padding:14px 20px;
+  min-height:88px;white-space:normal;
+}
+.official-app-tabs .app-tab-copy{min-width:0;display:flex;flex-direction:column;gap:6px}
+.official-app-tabs .app-tab-copy small{font-size:10px;letter-spacing:.8px}
+.official-app-tabs .app-tab-copy strong{font-size:15px;line-height:1.32}
+.official-app-tabs .app-brand-mark,
+.official-app-tabs .official-app-tab[data-system=xml] .app-brand-mark{
+  width:116px;height:62px;min-width:0;flex:none;
+  display:flex;align-items:center;justify-content:center;
+  position:static;padding:7px;border-radius:12px;overflow:hidden;
+  background:#fff;border:1px solid #e0e9f5;
+  box-shadow:0 5px 15px rgba(13,40,78,.065);
+}
+.official-app-tabs .app-brand-mark img,
+.official-app-tabs .official-app-tab[data-system=xml] .app-brand-mark img{
+  display:block;position:static;transform:none;left:auto;top:auto;
+  width:100%;height:100%;max-width:100%;max-height:100%;
+  object-fit:contain;object-position:center;
+}
+.official-app-tabs .official-app-tab[aria-selected=true] .app-brand-mark{
+  border-color:rgba(255,255,255,.5);
+  box-shadow:0 6px 14px rgba(0,30,85,.14);
+}
+.official-app-detail{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:30px}
+.official-app-copy .system-identity{align-items:center}
+.official-app-copy .system-active-brand{
+  display:flex;align-items:center;justify-content:center;
+  flex:0 0 73px;width:73px;height:58px;overflow:hidden;
+  border:1px solid #dce8f8;border-radius:12px;background:#fff;
+  box-shadow:0 6px 15px rgba(20,55,100,.045);padding:6px;
+}
+.official-app-copy .system-active-brand img{
+  width:100%;height:100%;max-width:100%;max-height:100%;
+  object-fit:contain;object-position:center;
+}
+.official-app-copy .system-identity strong{font-size:13px}
+.official-logo-surface{
+  aspect-ratio:auto;max-width:none;width:100%;min-width:0;
+  min-height:260px;padding:28px;overflow:visible;
+  border-radius:24px;background:linear-gradient(155deg,#fff,#f7faff);
+  display:flex;align-items:center;justify-content:center;
+}
+.official-logo-frame{
+  display:flex;align-items:center;justify-content:center;
+  width:100%;height:100%;min-height:190px;overflow:visible;
+}
+#system-active-logo{
+  display:block;width:100%;height:auto;max-width:100%;max-height:245px;
+  min-width:0;object-fit:contain;object-position:center;
+  filter:none;animation:official-logo-in .25s ease both;
+}
+.official-app-visual{overflow:visible}
+@media(max-width:1120px) and (min-width:701px){
+ .official-app-tabs .official-app-tab{grid-template-columns:minmax(0,1fr) 90px;gap:8px;padding:11px 12px}
+ .official-app-tabs .app-brand-mark{width:90px;height:58px;padding:5px}
+ .official-app-detail{gap:16px;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+ .official-logo-surface{min-height:200px;padding:16px}
+ .official-logo-frame{min-height:160px}
+}
+@media(max-width:850px){
+ .official-app-tabs{display:flex;flex-direction:column;overflow:visible}
+ .official-app-tabs .official-app-tab{display:grid;grid-template-columns:minmax(0,1fr) 120px;min-height:80px;padding:10px 17px;gap:12px}
+ .official-app-tabs .app-brand-mark{width:120px;height:61px}
+ .official-app-detail{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}
+}
+@media(max-width:600px){
+ .official-app-tabs .official-app-tab{grid-template-columns:minmax(0,1fr) 94px;min-height:73px;padding:10px 13px;gap:8px}
+ .official-app-tabs .app-tab-copy strong{font-size:13px}
+ .official-app-tabs .app-tab-copy small{font-size:8px}
+ .official-app-tabs .app-brand-mark,
+ .official-app-tabs .official-app-tab[data-system=xml] .app-brand-mark{
+   width:94px;height:53px;padding:5px;border-radius:10px;
+ }
+ .official-app-tabs .app-brand-mark img,
+ .official-app-tabs .official-app-tab[data-system=xml] .app-brand-mark img{
+   width:100%;height:100%;object-fit:contain;position:static;transform:none;
+ }
+ .official-app-detail{display:flex;flex-direction:column;gap:21px}
+ .official-app-copy .system-active-brand{width:63px;height:51px;flex-basis:63px}
+ .official-logo-surface{width:100%;min-height:175px;padding:18px;aspect-ratio:auto;overflow:visible}
+ .official-logo-frame{min-height:140px}
+ #system-active-logo{height:auto;max-height:155px;object-fit:contain}
+}
 </style></head><body>
 <svg class="nu-svg-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" width="0" height="0"><symbol id="nu-cpu" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="2"/><path d="M9 1v4M15 1v4M9 19v4M15 19v4M19 9h4M19 15h4M1 9h4M1 15h4"/></symbol><symbol id="nu-drive" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 14h18"/><circle cx="8" cy="16.5" r=".8"/><path d="M13 16.5h4"/></symbol><symbol id="nu-server" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="8" rx="2"/><rect x="3" y="13" width="18" height="8" rx="2"/><path d="M7 7h.01M7 17h.01M11 7h6M11 17h6"/></symbol><symbol id="nu-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol><symbol id="nu-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol><symbol id="nu-office" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 7h6M9 11h6M9 15h4"/></symbol><symbol id="nu-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/></symbol><symbol id="nu-building" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h2M14 6h2M8 10h2M14 10h2M8 14h2M14 14h2M10 22v-4h4v4"/></symbol><symbol id="nu-monitor" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></symbol><symbol id="nu-layers" viewBox="0 0 24 24"><path d="m12 2 9 5-9 5-9-5 9-5zM3 12l9 5 9-5M3 17l9 5 9-5"/></symbol><symbol id="nu-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8z"/><path d="M8 11h8M8 14h5"/></symbol><symbol id="nu-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></symbol><symbol id="nu-key" viewBox="0 0 24 24"><circle cx="7.5" cy="15.5" r="4.5"/><path d="M11 12l10-10M15 8l3 3M18 5l3 3"/></symbol><symbol id="nu-facebook" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol><symbol id="nu-arrowup" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></symbol><symbol id="nu-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></symbol><symbol id="nu-headset" viewBox="0 0 24 24"><path d="M3 14v-3a9 9 0 0 1 18 0v3M3 14h3v6H5a2 2 0 0 1-2-2v-4zM21 14h-3v6h1a2 2 0 0 0 2-2v-4zM18 20a5 5 0 0 1-5 2h-2"/></symbol><symbol id="nu-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol><symbol id="nu-product-ledger" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 3v18M11 8h6M11 12h6M11 16h4"/></symbol><symbol id="nu-product-store" viewBox="0 0 24 24"><path d="M4 9 6 4h12l2 5M4 9h16M5 12v8h14v-8M9 20v-6h6v6M4 9c0 3 3 3 4 1 .8 2.3 3.2 2.3 4 0 .8 2.3 3.2 2.3 4 0 1 2 4 2 4-1"/></symbol><symbol id="nu-product-bank" viewBox="0 0 24 24"><path d="m3 10 9-6 9 6M3 10h18M6 10v9M10 10v9M14 10v9M18 10v9M3 20h18"/></symbol><symbol id="nu-product-payroll" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M5.5 16c0-2 7-2 7 0M15 9h4M15 13h4M15 17h4"/></symbol><symbol id="nu-product-xml" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="m9 7-3 3 3 3m6-6 3 3-3 3M13.5 6l-3 8"/></symbol><symbol id="nu-product-invoice" viewBox="0 0 24 24"><path d="M7 2h9l4 4v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><path d="M16 2v5h4M9 10h7M9 14h4m-3 4 1.8 1.8L16 16"/></symbol></svg>
 <a class="skip" href="#contenido">Ir al contenido</a>
@@ -533,40 +622,30 @@ footer .footer-action:hover{color:#fff}
   <div class="system-panel official-app-panel">
     <div class="system-tabs official-app-tabs" role="tablist" aria-label="Aplicaciones CONTPAQi">
     <button type="button" role="tab" class="official-app-tab" id="tab-contabilidad" data-system="contabilidad" aria-controls="system-detail" aria-selected="true">
-    <span class="app-line-icon" aria-hidden="true"><svg class="nu-icon" viewBox="0 0 24 24"><use href="#nu-product-ledger"></use></svg></span>
     <span class="app-tab-copy"><small>CONTPAQi</small><strong>Contabilidad</strong></span>
     <span class="app-brand-mark" aria-hidden="true"><img src="https://raw.githubusercontent.com/carmacorte/Nuvexdatacenter/main/assets/contpaqi/contabilidad.png" alt="" loading="eager"></span>
-    <span class="app-tab-arrow" aria-hidden="true">↗</span>
   </button>
     <button type="button" role="tab" class="official-app-tab" id="tab-comercial" data-system="comercial" aria-controls="system-detail" aria-selected="false" tabindex="-1">
-    <span class="app-line-icon" aria-hidden="true"><svg class="nu-icon" viewBox="0 0 24 24"><use href="#nu-product-store"></use></svg></span>
     <span class="app-tab-copy"><small>CONTPAQi</small><strong>Comercial Premium</strong></span>
     <span class="app-brand-mark" aria-hidden="true"><img src="https://raw.githubusercontent.com/carmacorte/Nuvexdatacenter/main/assets/contpaqi/comercial-premium.png" alt="" loading="lazy"></span>
-    <span class="app-tab-arrow" aria-hidden="true">↗</span>
   </button>
     <button type="button" role="tab" class="official-app-tab" id="tab-bancos" data-system="bancos" aria-controls="system-detail" aria-selected="false" tabindex="-1">
-    <span class="app-line-icon" aria-hidden="true"><svg class="nu-icon" viewBox="0 0 24 24"><use href="#nu-product-bank"></use></svg></span>
     <span class="app-tab-copy"><small>CONTPAQi</small><strong>Bancos</strong></span>
     <span class="app-brand-mark" aria-hidden="true"><img src="https://raw.githubusercontent.com/carmacorte/Nuvexdatacenter/main/assets/contpaqi/bancos.png" alt="" loading="lazy"></span>
-    <span class="app-tab-arrow" aria-hidden="true">↗</span>
   </button>
     <button type="button" role="tab" class="official-app-tab" id="tab-nominas" data-system="nominas" aria-controls="system-detail" aria-selected="false" tabindex="-1">
-    <span class="app-line-icon" aria-hidden="true"><svg class="nu-icon" viewBox="0 0 24 24"><use href="#nu-product-payroll"></use></svg></span>
     <span class="app-tab-copy"><small>CONTPAQi</small><strong>Nóminas</strong></span>
     <span class="app-brand-mark" aria-hidden="true"><img src="https://raw.githubusercontent.com/carmacorte/Nuvexdatacenter/main/assets/contpaqi/nominas.png" alt="" loading="lazy"></span>
-    <span class="app-tab-arrow" aria-hidden="true">↗</span>
   </button>
     <button type="button" role="tab" class="official-app-tab" id="tab-xml" data-system="xml" aria-controls="system-detail" aria-selected="false" tabindex="-1">
-    <span class="app-line-icon" aria-hidden="true"><svg class="nu-icon" viewBox="0 0 24 24"><use href="#nu-product-xml"></use></svg></span>
     <span class="app-tab-copy"><small>CONTPAQi</small><strong>XML en línea</strong></span>
     <span class="app-brand-mark" aria-hidden="true"><img src="https://raw.githubusercontent.com/carmacorte/Nuvexdatacenter/main/assets/contpaqi/xml-en-linea.png" alt="" loading="lazy"></span>
-    <span class="app-tab-arrow" aria-hidden="true">↗</span>
   </button>
     </div>
     <div class="system-detail official-app-detail" id="system-detail" role="tabpanel" aria-labelledby="tab-contabilidad" tabindex="0">
       <div class="official-app-copy">
         <div class="system-identity">
-          <span class="system-active-icon" aria-hidden="true"><svg class="nu-icon" viewBox="0 0 24 24"><use id="system-active-symbol" href="#nu-product-ledger"></use></svg></span>
+          <span class="system-active-brand" aria-hidden="true"><img id="system-active-icon" src="https://raw.githubusercontent.com/carmacorte/Nuvexdatacenter/main/assets/contpaqi/contabilidad.png" alt="" decoding="async"></span>
           <div><p>APLICACIÓN EMPRESARIAL</p><strong id="system-active-name">CONTPAQi Contabilidad</strong></div>
         </div>
         <h3 id="system-title">Tu contabilidad,<br>contigo.</h3>
@@ -575,10 +654,7 @@ footer .footer-action:hover{color:#fff}
         <a class="text-link blue" href="#contacto">Cuéntanos qué sistemas utilizas <span aria-hidden="true">↗</span></a>
       </div>
       <figure class="official-app-visual">
-        <div class="official-logo-surface">
-          <span class="official-visual-eyebrow" aria-hidden="true">ECOSISTEMA EMPRESARIAL</span>
-          <img id="system-active-logo" src="https://raw.githubusercontent.com/carmacorte/Nuvexdatacenter/main/assets/contpaqi/contabilidad.png" alt="Logotipo de CONTPAQi Contabilidad" decoding="async" fetchpriority="high">
-        </div>
+        <div class="official-logo-surface"><span class="official-logo-frame"><img id="system-active-logo" src="https://raw.githubusercontent.com/carmacorte/Nuvexdatacenter/main/assets/contpaqi/contabilidad.png" alt="Logotipo de CONTPAQi Contabilidad" decoding="async" fetchpriority="high"></span></div>
         <figcaption>Aplicaciones de terceros alojables previa evaluación técnica</figcaption>
       </figure>
     </div>
@@ -719,10 +795,10 @@ function selectTab(t){
   document.querySelector('#system-title').innerText=title;
   document.querySelector('#system-description').textContent=description;
   document.querySelector('#system-detail').setAttribute('aria-labelledby',t.id);
-  const activeUse=document.querySelector('#system-active-symbol');
+  const activeIcon=document.querySelector('#system-active-icon');
   const activeName=document.querySelector('#system-active-name');
   const officialLogo=document.querySelector('#system-active-logo');
-  if(activeUse)activeUse.setAttribute('href','#nu-product-'+icon);
+  if(activeIcon)activeIcon.src='https://raw.githubusercontent.com/carmacorte/Nuvexdatacenter/main/assets/contpaqi/'+file;
   if(activeName)activeName.textContent=name;
   if(officialLogo){
     officialLogo.src='https://raw.githubusercontent.com/carmacorte/Nuvexdatacenter/main/assets/contpaqi/'+file;
