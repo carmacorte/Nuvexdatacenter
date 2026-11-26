@@ -57,9 +57,18 @@ const systems={
   contabilidad:['Tu contabilidad,\ncontigo.','Accede a tu entorno de Contabilidad desde donde trabajes, con tus sistemas alojados en la infraestructura de Nuvex.','ledger','contabilidad.png','CONTPAQi Contabilidad'],
   comercial:['Tu operación comercial,\nconectada.','Lleva tu entorno de Comercial Premium a una infraestructura centralizada. Revisamos contigo la versión y los recursos que necesita tu operación.','store','comercial-premium.png','CONTPAQi Comercial Premium'],
   bancos:['Tu entorno de Bancos,\na tu alcance.','Conecta a tu equipo con su sistema de Bancos desde un entorno administrado por Nuvex.','bank','bancos.png','CONTPAQi Bancos'],
-  nominas:['Tu sistema de Nóminas,\nen la nube.','Mantén el entorno de trabajo de tu equipo en un servidor administrado, sujeto a validación de compatibilidad, acceso remoto y política de respaldos.','payroll','nominas.png','CONTPAQi Nóminas'],
+  nominas:['Tu sistema de Nóminas,\nen la nube.','Mantén el entorno de trabajo de tu equipo en un servidor administrado, sujeto a validación de compatibilidad, acceso remoto y política de respaldos.','payroll','https://contenidos.contpaqi.com/files/CONTPAQi_submarca_Nominas_RGB_A.png','CONTPAQi Nóminas'],
   xml:['Tus documentos,\nen el mismo entorno.','Incluye tus necesidades de XML en línea y documentos digitales en la revisión de infraestructura, conectividad y respaldos.','xml','xml-en-linea.png','CONTPAQi XML en línea']
 };
+// Preserve the previous supplied artwork if the brand-hosted horizontal image is unavailable.
+document.addEventListener('error',event=>{
+  const img=event.target;
+  if(img?.tagName !== 'IMG')return;
+  const fallback=img.dataset?.logoFallback;
+  if(!fallback)return;
+  img.removeAttribute('data-logo-fallback');
+  img.src=fallback;
+},true);
 const tabs=[...document.querySelectorAll('[role=tab]')];
 function selectTab(t){
   if(!t || !systems[t.dataset.system])return;
@@ -71,10 +80,19 @@ function selectTab(t){
   const activeIcon=document.querySelector('#system-active-icon');
   const activeName=document.querySelector('#system-active-name');
   const officialLogo=document.querySelector('#system-active-logo');
-  if(activeIcon)activeIcon.src='assets/contpaqi/'+file;
+  const externalLogo = /^https:\/\//.test(file);
+  const logoSrc = externalLogo ? file : 'assets/contpaqi/'+file;
+  const fallbackSrc = 'assets/contpaqi/nominas.png';
+  if(activeIcon){
+    if(externalLogo){activeIcon.dataset.logoFallback=fallbackSrc;activeIcon.referrerPolicy='no-referrer'}
+    else activeIcon.removeAttribute('data-logo-fallback');
+    activeIcon.src=logoSrc;
+  }
   if(activeName)activeName.textContent=name;
   if(officialLogo){
-    officialLogo.src='assets/contpaqi/'+file;
+    if(externalLogo){officialLogo.dataset.logoFallback=fallbackSrc;officialLogo.referrerPolicy='no-referrer'}
+    else officialLogo.removeAttribute('data-logo-fallback');
+    officialLogo.src=logoSrc;
     officialLogo.alt='Logotipo de '+name;
   }
 }
