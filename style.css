@@ -735,3 +735,45 @@ footer .footer-action:hover{color:#fff}
   .plan-spec .spec-head strong{font-size:16px}
   .plan-spec > span{font-size:8.5px}
 }
+
+
+/* NUVEX HORIZONTAL LOGO VIEWBOX V1 — official marks in matched horizontal proportions */
+.official-app-tabs .app-brand-mark .official-horizontal-logo,
+.system-active-brand .official-horizontal-logo,
+.official-logo-frame .official-horizontal-logo{
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:100%;
+  aspect-ratio:900 / 280;
+  flex:0 1 auto;
+  overflow:visible;
+}
+.official-app-tabs .app-brand-mark .official-horizontal-logo{
+  max-width:100%;
+  object-fit:contain;
+}
+.system-active-brand .official-horizontal-logo{
+  max-width:100%;
+}
+.official-logo-frame .official-horizontal-logo{
+  width:100%;
+  max-width:580px;
+  max-height:245px;
+  margin:auto;
+  filter:none;
+  animation:official-logo-in .25s ease both;
+}
+.official-app-tabs .official-app-tab[data-system=nominas] .app-brand-mark,
+.official-app-tabs .official-app-tab[data-system=xml] .app-brand-mark{
+  background:#fff;
+  overflow:hidden;
+}
+@media(max-width:600px){
+  .official-logo-frame .official-horizontal-logo{
+    max-height:155px;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .official-logo-frame .official-horizontal-logo{animation:none}
+}
