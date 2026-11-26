@@ -58,7 +58,7 @@ const systems={
   comercial:['Tu operación comercial,\nconectada.','Lleva tu entorno de Comercial Premium a una infraestructura centralizada. Revisamos contigo la versión y los recursos que necesita tu operación.','store','comercial-premium.png','CONTPAQi Comercial Premium'],
   bancos:['Tu entorno de Bancos,\na tu alcance.','Conecta a tu equipo con su sistema de Bancos desde un entorno administrado por Nuvex.','bank','bancos.png','CONTPAQi Bancos'],
   nominas:['Tu sistema de Nóminas,\nen la nube.','Mantén el entorno de trabajo de tu equipo en un servidor administrado, sujeto a validación de compatibilidad, acceso remoto y política de respaldos.','payroll','nominas.png','CONTPAQi Nóminas'],
-  xml:['Tus documentos,\nen el mismo entorno.','Incluye tus necesidades de XML en línea y documentos digitales en la revisión de infraestructura, conectividad y respaldos.','xml','xml-en-linea.png','CONTPAQi XML en línea']
+  xml:['Tus documentos,\nen el mismo entorno.','Incluye tus necesidades de XML en línea y documentos digitales en la revisión de infraestructura, conectividad y respaldos.','xml','xml-en-linea.png','CONTPAQi XML en línea+']
 };
 /* NUVEX HORIZONTAL BRAND MARKS V1 — build from the licensed assets already hosted locally.
    Keeps the visual presentation of the user-supplied LOGOS.pptx without image hotlinks. */
