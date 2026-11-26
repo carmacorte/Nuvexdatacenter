@@ -57,19 +57,42 @@ const systems={
   contabilidad:['Tu contabilidad,\ncontigo.','Accede a tu entorno de Contabilidad desde donde trabajes, con tus sistemas alojados en la infraestructura de Nuvex.','ledger','contabilidad.png','CONTPAQi Contabilidad'],
   comercial:['Tu operación comercial,\nconectada.','Lleva tu entorno de Comercial Premium a una infraestructura centralizada. Revisamos contigo la versión y los recursos que necesita tu operación.','store','comercial-premium.png','CONTPAQi Comercial Premium'],
   bancos:['Tu entorno de Bancos,\na tu alcance.','Conecta a tu equipo con su sistema de Bancos desde un entorno administrado por Nuvex.','bank','bancos.png','CONTPAQi Bancos'],
-  nominas:['Tu sistema de Nóminas,\nen la nube.','Mantén el entorno de trabajo de tu equipo en un servidor administrado, sujeto a validación de compatibilidad, acceso remoto y política de respaldos.','payroll','https://contenidos.contpaqi.com/files/CONTPAQi_submarca_Nominas_RGB_A.png','CONTPAQi Nóminas'],
+  nominas:['Tu sistema de Nóminas,\nen la nube.','Mantén el entorno de trabajo de tu equipo en un servidor administrado, sujeto a validación de compatibilidad, acceso remoto y política de respaldos.','payroll','nominas.png','CONTPAQi Nóminas'],
   xml:['Tus documentos,\nen el mismo entorno.','Incluye tus necesidades de XML en línea y documentos digitales en la revisión de infraestructura, conectividad y respaldos.','xml','xml-en-linea.png','CONTPAQi XML en línea']
 };
-// Preserve the previous supplied artwork if the brand-hosted horizontal image is unavailable.
-document.addEventListener('error',event=>{
-  const img=event.target;
-  if(img?.tagName !== 'IMG')return;
-  const fallback=img.dataset?.logoFallback;
-  if(!fallback)return;
-  img.removeAttribute('data-logo-fallback');
-  img.src=fallback;
-},true);
+/* NUVEX HORIZONTAL BRAND MARKS V1 — build from the licensed assets already hosted locally.
+   Keeps the visual presentation of the user-supplied LOGOS.pptx without image hotlinks. */
+const horizontalLogo = key => {
+  const meta = key === 'nominas'
+    ? {src:'assets/contpaqi/nominas.png',w:1097,h:1074,
+       icon:[5,17,265,246,'230 20 635 590'],
+       text:[285,35,597,210,'2 680 1095 385']}
+    : key === 'xml'
+    ? {src:'assets/contpaqi/xml-en-linea.png',w:1600,h:859,
+       icon:[5,28,265,223,'495 0 605 510'],
+       text:[285,76,600,128,'0 515 1600 340']}
+    : null;
+  if (!meta) return '';
+  const part = ([x,y,w,h,box]) => '<svg x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" viewBox="'+box+'"><image href="'+meta.src+'" width="'+meta.w+'" height="'+meta.h+'"></image></svg>';
+  return '<svg class="official-horizontal-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 280" role="img" aria-label="'+(key==='nominas'?'CONTPAQi Nóminas':'CONTPAQi XML en línea+')+'">'+part(meta.icon)+part(meta.text)+'</svg>';
+};
 const tabs=[...document.querySelectorAll('[role=tab]')];
+function renderSelectedLogo(container,key,file,name){
+  if (!container) return;
+  if (key==='nominas' || key==='xml'){
+    container.innerHTML=horizontalLogo(key);
+    return;
+  }
+  let img=container.querySelector('img');
+  if(!img || container.querySelector('svg')){
+    container.replaceChildren();
+    img=document.createElement('img');
+    img.decoding='async';
+    container.appendChild(img);
+  }
+  img.src='assets/contpaqi/'+file;
+  img.alt='Logotipo de '+name;
+}
 function selectTab(t){
   if(!t || !systems[t.dataset.system])return;
   tabs.forEach(b=>{b.setAttribute('aria-selected',String(b===t));b.tabIndex=b===t?0:-1});
@@ -77,24 +100,9 @@ function selectTab(t){
   document.querySelector('#system-title').innerText=title;
   document.querySelector('#system-description').textContent=description;
   document.querySelector('#system-detail').setAttribute('aria-labelledby',t.id);
-  const activeIcon=document.querySelector('#system-active-icon');
-  const activeName=document.querySelector('#system-active-name');
-  const officialLogo=document.querySelector('#system-active-logo');
-  const externalLogo = /^https:\/\//.test(file);
-  const logoSrc = externalLogo ? file : 'assets/contpaqi/'+file;
-  const fallbackSrc = 'assets/contpaqi/nominas.png';
-  if(activeIcon){
-    if(externalLogo){activeIcon.dataset.logoFallback=fallbackSrc;activeIcon.referrerPolicy='no-referrer'}
-    else activeIcon.removeAttribute('data-logo-fallback');
-    activeIcon.src=logoSrc;
-  }
-  if(activeName)activeName.textContent=name;
-  if(officialLogo){
-    if(externalLogo){officialLogo.dataset.logoFallback=fallbackSrc;officialLogo.referrerPolicy='no-referrer'}
-    else officialLogo.removeAttribute('data-logo-fallback');
-    officialLogo.src=logoSrc;
-    officialLogo.alt='Logotipo de '+name;
-  }
+  document.querySelector('#system-active-name').textContent=name;
+  renderSelectedLogo(document.querySelector('.system-active-brand'),t.dataset.system,file,name);
+  renderSelectedLogo(document.querySelector('.official-logo-frame'),t.dataset.system,file,name);
 }
 tabs.forEach((t,i)=>{t.addEventListener('click',()=>selectTab(t));t.addEventListener('keydown',e=>{let n;if(e.key==='ArrowRight')n=(i+1)%tabs.length;else if(e.key==='ArrowLeft')n=(i-1+tabs.length)%tabs.length;else if(e.key==='Home')n=0;else if(e.key==='End')n=tabs.length-1;else return;e.preventDefault();selectTab(tabs[n]);tabs[n].focus()})});
 document.querySelector('#quote-form').addEventListener('submit',e=>{e.preventDefault();const name=document.querySelector('#name');if(!name.value.trim()){name.setCustomValidity('Escribe tu nombre o empresa.');name.reportValidity();return}name.setCustomValidity('');const message=`Hola, Nuvex Cloud. Soy ${name.value.trim()}. Me gustaría cotizar un servidor en la nube.\nPlan: ${document.querySelector('#plan').value}.\nSistema: ${document.querySelector('#product').value}.\nUsuarios simultáneos: ${document.querySelector('#users').value}.\n¿Me pueden compartir información?`;const url='https://wa.me/526145153676?text='+encodeURIComponent(message);window.open(url,'_blank','noopener,noreferrer');const status=document.querySelector('#form-status');status.replaceChildren();const link=document.createElement('a');link.href=url;link.target='_blank';link.rel='noopener noreferrer';link.textContent='Solicitud preparada. Si WhatsApp no abrió, toca aquí ↗';status.append(link)});document.querySelector('#name').addEventListener('input',e=>e.target.setCustomValidity(''));
